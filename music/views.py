@@ -18,6 +18,8 @@ load_dotenv()
 
 client_id = os.getenv("CLIENT_ID")
 client_secret = os.getenv("CLIENT_SECRET")
+rapid_api_key = os.getenv("RAPID_API_KEY")
+
 
 def get_token():
 	auth_string = client_id + ":" + client_secret
@@ -175,7 +177,7 @@ def get_audio_details(query):
 	querystring = {"track":query}
 
 	headers = {
-		"x-rapidapi-key": "809be7e7bdmsh8717fb81e6217f7p13fb0djsn63369da9510c",
+		"x-rapidapi-key": rapid_api_key,
 		"x-rapidapi-host": "spotify-scraper.p.rapidapi.com"
 	}
 
@@ -214,7 +216,7 @@ def music(request, pk):
 	querystring = {"trackId":track_id}
 
 	headers = {
-		"x-rapidapi-key": "809be7e7bdmsh8717fb81e6217f7p13fb0djsn63369da9510c",
+		"x-rapidapi-key": rapid_api_key,
 		"x-rapidapi-host": "spotify-scraper.p.rapidapi.com"
 	}
 
@@ -283,7 +285,7 @@ def search(request):
 		querystring = {"term":search_query,"type":"track"}
 
 		headers = {
-			"x-rapidapi-key": "809be7e7bdmsh8717fb81e6217f7p13fb0djsn63369da9510c",
+			"x-rapidapi-key": rapid_api_key,
 			"x-rapidapi-host": "spotify-scraper.p.rapidapi.com"
 		}
 
@@ -331,7 +333,7 @@ def profile(request, pk):
 	querystring = {"artistId": artist_id}
 
 	headers = {
-		"x-rapidapi-key": "809be7e7bdmsh8717fb81e6217f7p13fb0djsn63369da9510c",
+		"x-rapidapi-key": rapid_api_key,
 		"x-rapidapi-host": "spotify-scraper.p.rapidapi.com"
 	}
 
